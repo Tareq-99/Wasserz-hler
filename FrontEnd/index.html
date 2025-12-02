@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Wasserzähler Dashboard</title>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Wasserzähler Dashboard</h1>
+
+    <!-- FILTER CHIPS -->
+    <div class="chip-container">
+
+        <!-- Parameter -->
+        <div class="chip-group">
+            <span class="chip chip-active" data-param="WaterTemperature">Temperatur</span>
+            <span class="chip" data-param="CurrentFlowRate">Durchfluss</span>
+            <span class="chip" data-param="MeterReadingRefDir">Zählerstand</span>
+        </div>
+
+        <!-- Limit -->
+        <div class="chip-group">
+            <span class="chip chip-limit chip-active" data-limit="50">50 Werte</span>
+            <span class="chip chip-limit" data-limit="200">200 Werte</span>
+            <span class="chip chip-limit" data-limit="1000">1000 Werte</span>
+        </div>
+
+    </div>
+
+    <!-- Karten -->
+    <div class="cards">
+        <div class="card">
+            <h3>Letzter Wert</h3>
+            <p id="card_value">…</p>
+        </div>
+
+        <div class="card">
+            <h3>Einheit</h3>
+            <p id="card_unit">…</p>
+        </div>
+
+        <div class="card">
+            <h3>Parameter</h3>
+            <p id="card_param">…</p>
+        </div>
+    </div>
+
+    <!-- Diagramm -->
+    <canvas id="chart"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
