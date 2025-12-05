@@ -4,7 +4,12 @@ let chart;
 
 // API laden
 async function loadData() {
-    const res = await fetch("http://localhost:3000/api/watermeter/all");
+    const res = await fetch("http://localhost:3000/api/watermeter/all", {
+        headers: {
+            "X-API-TOKEN": "4d95f06e0c9cac57dfe1beba3c0af0f184b71a0e8f19a2c373cc0a7d2b04d98f"
+        }
+    });
+
     const json = await res.json();
     const all = json.data;
 
